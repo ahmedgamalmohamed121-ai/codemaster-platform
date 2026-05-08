@@ -2334,7 +2334,15 @@ function SignupPage({ setCurrentPage, setIsLoggedIn, setCurrentUser }: {
         setIsLoggedIn(true);
         setCurrentPage('dashboard');
       } else {
-        setError(t('common.error') + ': ' + (data.message || 'Registration failed'));
+        const errorText = await response.text();
+        let errorMessage = 'Registration failed';
+        try {
+          const errorJson = JSON.parse(errorText);
+          errorMessage = errorJson.message || errorMessage;
+        } catch (e) {
+          errorMessage = errorText || errorMessage;
+        }
+        setError(t('common.error') + ': ' + errorMessage);
       }
     } catch (err) {
       setError(t('common.error') + ': Connection failed');
