@@ -616,7 +616,7 @@ function Navbar({
             <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
               <Code className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="hidden sm:inline text-2xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
               CodeMaster
             </span>
           </motion.div>
@@ -641,7 +641,7 @@ function Navbar({
           </div>
 
           {/* Right Side */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <LanguageToggle />
             
             <div className="hidden md:flex items-center gap-3">
@@ -1648,12 +1648,12 @@ function Dashboard({ currentUser, setCurrentPage }: { currentUser: any; setCurre
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors"
+                    className="flex flex-col sm:flex-row gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors"
                   >
                     <img
                       src={course.image}
                       alt={course.title}
-                      className="w-24 h-16 object-cover rounded-lg"
+                      className="w-full sm:w-24 h-32 sm:h-16 object-cover rounded-lg"
                     />
                     <div className="flex-1">
                       <h3 className="font-semibold mb-1">{course.title}</h3>
@@ -1666,7 +1666,7 @@ function Dashboard({ currentUser, setCurrentPage }: { currentUser: any; setCurre
                       </div>
                     </div>
                     <motion.button
-                      className="btn-primary px-4 py-2 text-sm self-center"
+                      className="btn-primary px-4 py-2 text-sm self-center w-full sm:w-auto"
                       whileHover={{ scale: 1.05 }}
                     >
                       {t('dashboard.resume')}

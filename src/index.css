@@ -35,6 +35,7 @@ html[dir="rtl"] *, html[dir="ltr"] * {
 /* Ensure all sections fit within viewport */
 section {
   max-width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -42,6 +43,7 @@ section {
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
+  width: 100%;
   position: relative;
   margin: 0;
   padding: 0;
@@ -50,6 +52,7 @@ html, body {
 /* Ensure all containers respect viewport width */
 #root {
   max-width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
