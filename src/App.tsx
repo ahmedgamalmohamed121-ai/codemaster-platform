@@ -13,7 +13,7 @@ import './i18n';
 type Page = 'home' | 'courses' | 'dashboard' | 'quiz' | 'login' | 'signup';
 type CourseLevel = 'beginner' | 'intermediate' | 'advanced' | 'all';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api';
 
 interface Course {
   id: number;
